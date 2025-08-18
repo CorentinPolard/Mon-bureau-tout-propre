@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/simulateur.css">
+    <title>Faire un devis</title>
+</head>
+
+<body>
+    <main>
+        <h1>Faire un devis</h1>
+        <form id="devis">
+
+            <div>
+                <label for="surface">Surface (en m²)</label>
+                <input type="number" id="surface" min="1" required>
+            </div>
+
+            <div>
+                <label for="frequency">Fréquence du nettoyage</label>
+                <select id="frequency" required>
+                    <option value=1>Une fois par semaine</option>
+                    <option value=2>Deux fois par semaine</option>
+                    <option value=3>Trois fois par semaine</option>
+                    <option value=4>Quatre fois par semaine</option>
+                    <option value=5>Tous les jours</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="window">Option vitres incluses</label>
+                <input type="checkbox" id="window">
+            </div>
+
+            <input type="submit" value="Faire le devis">
+        </form>
+    </main>
+
+    <script src="assets/scripts/simulateur.js"></script>
+</body>
+
+</html>
