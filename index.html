@@ -9,16 +9,27 @@
 </head>
 
 <body>
+    <header>
+        <img class="logo" src="assets/images/logo.webp" alt="Logo Mon bureau tout propre">
+        <nav>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Faire un devis</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
         <h1>Faire un devis</h1>
         <form id="devis">
 
-            <div>
+            <div class="form-group">
                 <label for="surface">Surface (en m²)</label>
                 <input type="number" id="surface" min="1" required>
             </div>
 
-            <div>
+            <div class="form-group">
                 <label for="frequency">Fréquence du nettoyage</label>
                 <select id="frequency" required>
                     <option value=1>Une fois par semaine</option>
@@ -29,14 +40,23 @@
                 </select>
             </div>
 
-            <div>
+            <div class="form-group">
                 <label for="window">Option vitres incluses</label>
                 <input type="checkbox" id="window">
             </div>
 
             <input type="submit" value="Faire le devis">
         </form>
+
+        <div id="result-container" class="result-container hidden">
+            <h2>Votre devis</h2>
+            <p id="result"></p>
+        </div>
     </main>
+
+    <footer>
+        <p>&copy; 2025 Mon bureau tout propre</p>
+    </footer>
 
     <script src="assets/scripts/simulateur.js"></script>
 </body>
