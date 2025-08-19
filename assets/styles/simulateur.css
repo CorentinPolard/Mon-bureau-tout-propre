@@ -13,13 +13,6 @@ body {
     min-height: 100vh;
 }
 
-header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 60px;
-}
-
 header,
 footer {
     padding: 10px 20px;
@@ -32,8 +25,6 @@ footer {
 }
 
 nav ul {
-    display: flex;
-    gap: 20px;
     list-style: none;
 }
 
@@ -57,7 +48,7 @@ main {
 #devis {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 16px;
 }
 
 #devis,
@@ -67,13 +58,21 @@ main {
     padding: 20px;
     background-color: #f9f9f9;
     border: solid 1px #ccc;
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
     gap: 6px;
+}
+
+input,
+select {
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: solid 1px #ccc;
+    border-radius: 6px;
 }
 
 .result-container {
@@ -89,6 +88,79 @@ main {
     font-size: 0.9em;
 }
 
+
+/* Menu Burger */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    background-color: #d6eed8;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: -100%;
+    top: 0px;
+    width: 100%;
+    background-color: #d6eed8;
+    transition: left 0.3s;
+    z-index: 10;
+}
+
+.nav-menu.active {
+    top: 0;
+    left: 0;
+}
+
+.nav-item {
+    margin: 16px 0;
+}
+
+.nav-link {
+    color: #004c6e;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: rgb(51, 159, 201);
+}
+
+.hamburger {
+    display: block;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #004c6e;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hamburger animation */
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Desktop styles */
 @media screen and (min-width: 600px) {
 
     body {
@@ -98,6 +170,28 @@ main {
     #devis,
     .result-container {
         max-width: 500px;
+    }
+
+    .navbar {
+        padding: 0 24px;
+    }
+
+    .nav-menu {
+        position: static;
+        flex-direction: row;
+        width: auto;
+        background: none;
+        left: 0;
+        top: auto;
+        transition: none;
+    }
+
+    .nav-item {
+        margin: 0 20px;
+    }
+
+    .hamburger {
+        display: none;
     }
 }
 
