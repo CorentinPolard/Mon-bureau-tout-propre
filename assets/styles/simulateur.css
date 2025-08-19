@@ -4,24 +4,44 @@
     box-sizing: border-box;
 }
 
+[data-theme="light"] {
+    --primary-bg-color: #ffffff;
+    --second-bg-color: #f9f9f9;
+    --third-bg-color: #d6eed8;
+    --primary-text-color: #000;
+    --secondary-text-color: #004c6e;
+    --border-color: #ccc;
+}
+
+[data-theme="dark"] {
+    --primary-bg-color: #121212;
+    --second-bg-color: #1e1e1e;
+    --third-bg-color: #2c2c2c;
+    --primary-text-color: #ffffff;
+    --secondary-text-color: #b0bec5;
+    --border-color: #444;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
     display: flex;
     flex-direction: column;
     gap: 40px;
     min-height: 100vh;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
 header,
 footer {
     padding: 10px 20px;
-    background-color: #d6eed8;
+    background-color: var(--third-bg-color);
 }
 
 footer {
     text-align: center;
-    color: #004c6e;
+    color: var(--secondary-text-color);
 }
 
 nav ul {
@@ -30,7 +50,7 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: #004c6e;
+    color: var(--secondary-text-color);
 }
 
 .logo {
@@ -43,6 +63,11 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
+}
+
+btn[data-theme-toggler] {
+    padding-top: 20px;
 }
 
 #devis {
@@ -56,8 +81,8 @@ main {
     max-width: 300px;
     width: 100%;
     padding: 20px;
-    background-color: #f9f9f9;
-    border: solid 1px #ccc;
+    background-color: var(--second-bg-color);
+    border: solid 1px var(--border-color);
     border-radius: 6px;
 }
 
@@ -71,7 +96,7 @@ input,
 select {
     padding: 12px 20px;
     box-sizing: border-box;
-    border: solid 1px #ccc;
+    border: solid 1px var(--border-color);
     border-radius: 6px;
 }
 
@@ -96,7 +121,7 @@ select {
     justify-content: space-between;
     align-items: center;
     padding: 0 16px;
-    background-color: #d6eed8;
+    background-color: var(--third-bg-color);
 }
 
 .nav-menu {
@@ -107,7 +132,7 @@ select {
     left: -100%;
     top: 0px;
     width: 100%;
-    background-color: #d6eed8;
+    background-color: var(--third-bg-color);
     transition: left 0.3s;
     z-index: 10;
 }
@@ -122,7 +147,7 @@ select {
 }
 
 .nav-link {
-    color: #004c6e;
+    color: var(--secondary-text-color);
     text-decoration: none;
     font-size: 1.1em;
     transition: color 0.3s;
@@ -143,7 +168,7 @@ select {
     width: 25px;
     height: 3px;
     margin: 5px auto;
-    background-color: #004c6e;
+    background-color: var(--secondary-text-color);
     transition: all 0.3s ease-in-out;
 }
 
