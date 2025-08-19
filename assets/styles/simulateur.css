@@ -17,8 +17,17 @@ header {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    gap: 60px;
+}
+
+header,
+footer {
+    padding: 10px 20px;
     background-color: #d6eed8;
+}
+
+footer {
+    text-align: center;
 }
 
 nav ul {
@@ -72,6 +81,11 @@ main {
 
 .hidden {
     display: none;
+}
+
+.form-error {
+    color: red;
+    font-size: 0.9em;
 }
 
 @media screen and (min-width: 600px) {
